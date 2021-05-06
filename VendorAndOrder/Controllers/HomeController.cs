@@ -8,10 +8,8 @@ namespace VendorAndOrder.Controllers
     [Route("/")]
     public ActionResult Index()
     {
-      Item starterItem = new Item("Please click to the vendors page");
-      return View(starterItem);
+      Vendor starterVendor = new Vendor("Please click below to the vendors page");
+      return View(starterVendor);
     }
-
-
   }
 }
