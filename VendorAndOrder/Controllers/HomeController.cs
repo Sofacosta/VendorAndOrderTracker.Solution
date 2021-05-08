@@ -1,15 +1,29 @@
 using Microsoft.AspNetCore.Mvc;
 using VendorAndOrder.Models;
+using System.Collections.Generic;
 
 namespace VendorAndOrder.Controllers
 {
   public class HomeController : Controller
   {
-    [Route("/")]
+    [HttpGet("/")]
     public ActionResult Index()
     {
-      Vendor starterVendor = new Vendor("Please click below to the vendors page");
-      return View(starterVendor);
+      List<Vendor> allVendors = Vendor.GetAll();
+      return View(allVendors);
+    }
+
+     [HttpGet("/vendors/new")]
+     public ActionResult CreateForm()
+     {
+       return View();
+     }
+
+    [HttpPost("/vendors")]
+    public ActionResult Create(string description)
+    {
+      Vendor myVendor = new Vendor(description);
+      return RedirectToAction("Index");
     }
   }
 }
