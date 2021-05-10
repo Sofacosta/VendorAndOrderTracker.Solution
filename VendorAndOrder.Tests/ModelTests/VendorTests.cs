@@ -6,8 +6,13 @@ using System;
 namespace VendorAndOrder.Tests
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
   {
+
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
 
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
@@ -15,19 +20,19 @@ namespace VendorAndOrder.Tests
       Vendor newVendor = new Vendor("test");
       Assert.AreEqual(typeof(Vendor),newVendor.GetType());
     }
-  }
 
-  // [TestMethod]
-  //   public void GetDescription_ReturnsDescription_String()
-  //   {
-  //     //Arrange
-  //     string description = "Sofia's bakery.";
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      //Arrange
+      string description = "Sofias bakery";
 
-  //     //Act
-  //     Vendor newVendor = new (description);
-  //     string result = newVendor.Description;
+      //Act
+      Vendor newVendor = new Vendor(description);
+      string result = newVendor.Description;
 
-  //     //Assert
-  //     Assert.AreEqual(description, result);
-  //   }
+      //Assert
+      Assert.AreEqual(description, result);
+    }
+  }  
 }
