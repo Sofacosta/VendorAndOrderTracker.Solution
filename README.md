@@ -1,11 +1,11 @@
 # Vendor And Order Tracker
 ## Independent project #10 for Epicodus
 ### Project initiated: 05-06-2021
-### Project modified: 05-09-2021
+### Project modified: 05-12-2021
 ### By Sofia Acosta
 ## Project Description
 MVC application to help a bakery track vendors that purchase baked goods and the orders belongong to those vendors. 
-* A splasj page is used
+* A splash page is used
 * Project has Vendor and Order classes
 * Project uses two or more controllers
 * Models are tested
