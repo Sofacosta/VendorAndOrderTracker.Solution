@@ -20,17 +20,21 @@ namespace VendorAndOrder.Controllers
      }
 
     [HttpPost("/vendors")]
-    public ActionResult Create(string description)
+    public ActionResult Create(string name)
     {
-      Vendor myVendor = new Vendor(description);
+      Vendor myVendor = new Vendor(name);
       return RedirectToAction("Index");
     }
 
     [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
     {
-      Vendor foundVendor = Vendor.Find(id);
-      return View(foundVendor);
+      Dictionary<string,object> model = new Dictionary<string,object>();
+      Vendor vendor = Vendor.Find(id);
+      List<Order> vendorOrders = vendor.Orders;
+      model.Add("vendor", vendor);
+      model.Add("orders", vendorOrders);
+      return View(model);
     }
   }
 }

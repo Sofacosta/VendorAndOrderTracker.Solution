@@ -5,16 +5,23 @@ namespace VendorAndOrder.Models
   public class Order
   {
     private static List<Order> _instances = new List<Order> {};
-    public string Name { get; set; }
+    //public string Name { get; set; }
     public int Id { get; }
-    public List<Vendor> Vendors { get; set; }
+    // public List<Vendor> Vendors { get; set; }
+    public string Title { get;set;}
+    public string Description { get; set;}
+    public int Price { get; set;}
 
-    public Order(string orderName)
+    public Order(string title, string description, int price)
     {
-      Name = orderName;
+
+      Title = title;
+      Description = description;
+      Price = price;
+      //Name = orderName;
       _instances.Add(this);
       Id = _instances.Count;
-      Vendors = new List<Vendor>{};
+      // Vendors = new List<Vendor>{};
     }
 
     public static void ClearAll()
@@ -28,12 +35,7 @@ namespace VendorAndOrder.Models
     }
     public static Order Find(int searchId)
     {
-      return _instances[searchId-1];
-    }
-
-    public void AddVendor(Vendor vendor)
-  {
-    Vendors.Add(vendor);
-  }
+      return _instances[searchId -1];
+    }   
   }
 }

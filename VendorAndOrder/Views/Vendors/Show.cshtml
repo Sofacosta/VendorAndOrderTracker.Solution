@@ -1,6 +1,21 @@
-<h1>Vendors Details: </h1>
+@using VendorAndOrder.Models;
 
-<h2>@Model.Description</h2>
+<h1>Vendor details:</h1>
 
-<a href='/vendors/new'>Add another vendor</a>
-<a href='/vendors'>View all vendors</a>
+<h2>Vendor Name: @Model["vendor"].Name</h2>
+@if (Model["orders"].Count == 0)
+{
+  <p>This Vendor has no orders</p>
+}
+
+<ul>
+  @foreach (Order order in @Model["orders"])
+  {
+    <li>Order Title: @order.Title</li>
+    <li>Order Description: @order.Description</li>
+    <li>Order Price: @order.Price</li> 
+  }
+</ul>
+<a href='/vendors/@Model["vendor"].Id/orders/new'> Enter a new order</a>
+<a href = "/vendors"> Return to vendors list</a>
+

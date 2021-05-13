@@ -1,11 +1,15 @@
 <h1>Add an order</h1>
 <p>Add an order here:</p>
 
-<form action="/orders" method="post">
-  <label for="orderName">Order name</label>
-  <input id="orderName" name="orderName" type="text">
-  <button type="submit">Add</button>
+<form action="/vendors/@Model.Id/orders" method="post">
+  <label for="orderTitle">Order title</label>
+  <input id="orderTitle" name="orderTitle" type="text">
+  <label for="orderDescription">Order description</label>
+  <input id="orderDescription" name="orderDescription" type="text">
+  <label for="orderPrice">Order price</label>
+  <input id="orderPrice" name="orderPrice" type="number">
+  <button type="submit">Submit new order</button>
 </form>
 
 <p><a href="/">Back home</a></p>
-<p><a href="/orders">Back to orders.</a></p>
+@* <p><a href="/orders">Back to orders.</a></p> *@
