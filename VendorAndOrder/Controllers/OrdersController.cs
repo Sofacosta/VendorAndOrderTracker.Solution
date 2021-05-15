@@ -19,11 +19,12 @@ namespace VendorAndOrder.Controllers
   [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
   public ActionResult Show(int vendorId, int orderId)
   {
-    Dictionary<string, object> model = new Dictionary<string, object>();
-    Order selectedOrder = Order.Find(orderId);
+    
+    Order Order = Order.Find(orderId);
     Vendor vendor = Vendor.Find(vendorId);
+    Dictionary<string, object> model = new Dictionary<string, object>();
     //List<Vendor> orderItems = selectedOrder.Vendors;
-    model.Add("order", selectedOrder);
+    model.Add("order", Order);
     model.Add("vendor", vendor);
     return View(model);
    }
