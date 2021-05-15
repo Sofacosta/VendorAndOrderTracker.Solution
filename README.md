@@ -1,7 +1,7 @@
 # Vendor And Order Tracker
-## Independent project #10 for Epicodus
+## Independent project #10 Basic Web Applications
 ### Project initiated: 05-06-2021
-### Project modified: 05-12-2021
+### Project modified: 05-15-2021
 ### By Sofia Acosta
 ## Project Description
 MVC application to help a bakery track vendors that purchase baked goods and the orders belongong to those vendors. 
@@ -12,9 +12,6 @@ MVC application to help a bakery track vendors that purchase baked goods and the
 * GET and POST requests/responses are used successfully
 * MVC routes follow RESTful conventions
 
-## Preview 
-* Not available at the moment 
-
 ## Technologies Used
  
 ```
@@ -22,7 +19,8 @@ MVC application to help a bakery track vendors that purchase baked goods and the
 * .NET
 * MSBuild
 * MSTest
-
+* Bootstrap
+* Razor
  ```
 
 ## Set up / Installation requirements
