@@ -5,9 +5,7 @@ namespace VendorAndOrder.Models
   public class Order
   {
     private static List<Order> _instances = new List<Order> {};
-    //public string Name { get; set; }
     public int Id { get; }
-    // public List<Vendor> Vendors { get; set; }
     public string Title { get;set;}
     public string Description { get; set;}
     public int Price { get; set;}
@@ -18,10 +16,8 @@ namespace VendorAndOrder.Models
       Title = title;
       Description = description;
       Price = price;
-      //Name = orderName;
       _instances.Add(this);
       Id = _instances.Count;
-      // Vendors = new List<Vendor>{};
     }
 
     public static void ClearAll()

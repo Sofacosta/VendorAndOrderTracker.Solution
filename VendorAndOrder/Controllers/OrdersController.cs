@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-// using System;
 using Microsoft.AspNetCore.Mvc;
 using VendorAndOrder.Models;
 
@@ -23,7 +22,6 @@ namespace VendorAndOrder.Controllers
     Order Order = Order.Find(orderId);
     Vendor vendor = Vendor.Find(vendorId);
     Dictionary<string, object> model = new Dictionary<string, object>();
-    //List<Vendor> orderItems = selectedOrder.Vendors;
     model.Add("order", Order);
     model.Add("vendor", vendor);
     return View(model);
